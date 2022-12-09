@@ -212,13 +212,13 @@ paths:
     shot_alembic_cache:
         definition: '@shot_publish_root/caches/@generic_shot_version_name.abc'
     shot_multi_cache:
-        definition: '@shot_publish_root/caches/{ftype}/{Shot}_{task_name}-{name}-{abcset_name}_v{version}.{ext}'
+        definition: '@shot_publish_root/caches/{Shot}_{task_name}-{name}-{abcset_name}_v{version}.{ext}'
 
     # Asset level alembic caches
     asset_alembic_cache:
         definition: '@asset_publish_root/caches/@generic_asset_version_name.abc'
     asset_multi_cache:
-        definition: '@asset_publish_root/caches/{ftype}/{Asset}_{task_name}-{name}-{abcset_name}_v{version}.{ext}'
+        definition: '@asset_publish_root/caches/{Asset}_{task_name}-{name}-{abcset_name}_v{version}.{ext}'
 
     ##########################################################################################
     # Shot level paths
