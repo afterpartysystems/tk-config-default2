@@ -22,6 +22,7 @@ includes:
 - ./includes/settings/tk-houdini.yml
 - ./includes/settings/tk-mari.yml
 - ./includes/settings/tk-maya.yml
+- ./includes/settings/tk-blender.yml
 - ./includes/settings/tk-motionbuilder.yml
 - ./includes/settings/tk-nuke.yml
 - ./includes/settings/tk-photoshopcc.yml
@@ -42,6 +43,7 @@ engines:
   tk-hiero: "@settings.tk-nuke.hiero.project"
   tk-houdini: "@settings.tk-houdini.project"
   tk-mari: "@settings.tk-mari.project"
+  tk-blender: "@settings.tk-blender.project"
   tk-maya: "@settings.tk-maya.project"
   tk-motionbuilder: "@settings.tk-motionbuilder.project"
   tk-nuke: "@settings.tk-nuke.project"

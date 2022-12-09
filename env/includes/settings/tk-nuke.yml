@@ -23,6 +23,7 @@ includes:
 - ./tk-multi-shotgunpanel.yml
 - ./tk-multi-snapshot.yml
 - ./tk-multi-workfiles2.yml
+- ./tk-multi-setframerange.yml
 - ./tk-nuke-writenode.yml
 
 ################################################################################
@@ -114,6 +115,19 @@ settings.tk-nuke.asset_step:
   - {app_instance: tk-multi-workfiles2, name: File Save...}
   - {app_instance: tk-multi-publish2, name: Publish...}
   location: "@engines.tk-nuke.location"
+  favourite_directories:
+  - display_name: "Asset Root"
+    template_directory: "asset_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Asset Renders"
+    template_directory: "asset_render_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Asset Footage"
+    template_directory: "asset_footage_area_nuke"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Asset Elements"
+    template_directory: "asset_element_area_nuke"
+    icon: "icons/custom_publish_icon.png"
 
 # project
 settings.tk-nuke.project:
@@ -164,8 +178,8 @@ settings.tk-nuke.shot_step:
       location: "@apps.tk-multi-about.location"
     tk-multi-breakdown:
       location: "@apps.tk-multi-breakdown.location"
-    tk-multi-setframerange:
-      location: "@apps.tk-multi-setframerange.location"
+    tk-multi-setframerange_cuts: "@settings.tk-multi-setframerange.generic_cuts"
+    tk-multi-setframerange_handles: "@settings.tk-multi-setframerange.generic_handles"
     tk-multi-loader2: "@settings.tk-multi-loader2.nuke"
     tk-multi-publish2: "@settings.tk-multi-publish2.nuke.shot_step"
     tk-multi-reviewsubmission: "@settings.tk-multi-reviewsubmission.nuke.shot"
@@ -182,6 +196,19 @@ settings.tk-nuke.shot_step:
   - {app_instance: tk-multi-workfiles2, name: File Save...}
   - {app_instance: tk-multi-publish2, name: Publish...}
   location: "@engines.tk-nuke.location"
+  favourite_directories:
+  - display_name: "Shot Root"
+    template_directory: "shot_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Shot Renders"
+    template_directory: "shot_render_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Shot Footage"
+    template_directory: "shot_footage_area_nuke"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Shot Elements"
+    template_directory: "shot_element_area_nuke"
+    icon: "icons/custom_publish_icon.png"
 
 ################################################################################
 # NukeStudio
