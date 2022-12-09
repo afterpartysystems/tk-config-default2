@@ -94,6 +94,9 @@ keys:
     aov_name:
         type: str
 
+    blender.scene:
+        alias: scene
+        type: str
     # these are used by the Hiero exporter and pipeline
     YYYY:
         type: int
@@ -138,7 +141,13 @@ keys:
             mb: Maya Binary (.mb)
         default: ma
         alias: extension
-
+    #needed for Multi publishing out of workfiles
+    abcset_name:
+      type: str
+    ext:
+      type: str
+    ftype:
+      type: str
 
 #
 # The paths section contains all the the key locations where files are to be stored
@@ -159,7 +168,6 @@ paths:
     # will be set within each template that uses the alias.
     shot_root: 01_projects/{Shot}
     asset_root: 04_assets/{sg_asset_type}/{Asset}
-    review_root: 07_review
     #sequence_root: sequences/{Sequence}
 
 
@@ -168,12 +176,12 @@ paths:
     ##########################################################################################
 
     # Publish root
-    shot_publish_root: @shot_root/publish
-    asset_publish_root: @asset_root/publish
+    shot_publish_root: '@shot_root/publish'
+    asset_publish_root: '@asset_root/publish'
 
     # Renders root
-    shot_render_root: @shot_root/renders
-    asset_render_root: @asset_root/renders
+    shot_render_root: '@shot_root/renders'
+    asset_render_root: '@asset_root/renders'
 
     #
     # Hiero
@@ -267,7 +275,7 @@ paths:
     # in the beta to support different extensions on mac and windows, while using the same
     # output module (Lossless with Alpha)
     aftereffects_shot_render_movie:
-        definition: '@review_root/{Shot}_{task_name}_{name}_{afx.comp}_v{version}.{afx.mov.ext}'
+        definition: '07_review/{Shot}_{task_name}_{name}_{afx.comp}_v{version}.{afx.mov.ext}'
 
 
     #
@@ -320,14 +328,14 @@ paths:
         definition: '@shot_work_area_houdini/cache/abc/{houdini.node}/{Shot}_{task_name}_{name}_{houdini.node}_v{version}.abc'
     # Rendered images
     houdini_shot_render:
-        definition: '@shot_render_area_houdini/{task_name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{task_name}-{name}_{houdini.node}_v{version}.{SEQ}.exr'
+        definition: '@shot_render_area_houdini/@generic_shot_version_name/{houdini.node}/v{version}/{Shot}_{task_name}-{name}_{houdini.node}_v{version}.{SEQ}.exr'
     # Additional mantra outputs
     houdini_shot_ifd:
-        definition: '@shot_work_area_houdini/ifds/{task_name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{task_name}-{name}_{houdini.node}_v{version}.{SEQ}.ifd'
+        definition: '@shot_work_area_houdini/ifds/@generic_shot_version_name/{houdini.node}/v{version}/{Shot}_{task_name}-{name}_{houdini.node}_v{version}.{SEQ}.ifd'
     houdini_shot_dcm:
-        definition: '@shot_work_area_houdini/dcms/{task_name}/{houdini.node}/v{version}/{width}x{height}/{Shot}_{task_name}-{name}_{houdini.node}_v{version}.{SEQ}.dcm'
+        definition: '@shot_work_area_houdini/dcms/@generic_shot_version_name/{houdini.node}/v{version}/{Shot}_{task_name}-{name}_{houdini.node}_v{version}.{SEQ}.dcm'
     houdini_shot_extra_plane:
-        definition: '@shot_render_area_houdini/{task_name}/{houdini.node}/v{version}/{aov_name}/{width}x{height}/{Shot}_{task_name}-{name}_{houdini.node}_{aov_name}_v{version}.{SEQ}.exr'
+        definition: '@shot_render_area_houdini/@generic_shot_version_name/{houdini.node}/v{version}/{aov_name}/{Shot}_{task_name}-{name}_{houdini.node}_{aov_name}_v{version}.{SEQ}.exr'
 
 
     #
@@ -394,9 +402,9 @@ paths:
 
     # review output
     shot_quicktime_quick:
-        definition: '@review_root/quickdaily/{Shot}_{name}_{iteration}.mov'
+        definition: '07_review/quickdaily/{Shot}_{name}_{iteration}.mov'
     nuke_shot_render_movie:
-        definition: '@review_root/{Shot}_{name}_{nuke.output}_v{version}.mov'
+        definition: '07_review/{Shot}_{name}_{nuke.output}_v{version}.mov'
 
     #
     # Hiero Shot Level
@@ -488,7 +496,7 @@ paths:
     # in the beta to support different extensions on mac and windows, while using the same
     # output module (Lossless with Alpha)
     aftereffects_asset_render_movie:
-        definition: '@review_root/{Asset}_{task_name}_{name}_{afx.comp}_v{version}.{afx.mov.ext}'
+        definition: '07_review/{Asset}_{task_name}_{name}_{afx.comp}_v{version}.{afx.mov.ext}'
 
     #
     # Mari Asset Level
@@ -545,14 +553,14 @@ paths:
         definition: '@asset_work_area_houdini/cache/abc/{houdini.node}/{Asset}_{task_name}_{name}_{houdini.node}_v{version}.abc'
     # Rendered images
     houdini_asset_render:
-        definition: '@asset_render_area_houdini/{task_name}/{houdini.node}/v{version}/{width}x{height}/{Asset}_{task_name}_{name}_{houdini.node}_v{version}.{SEQ}.exr'
+        definition: '@asset_render_area_houdini/@generic_asset_version_name/{houdini.node}/v{version}/{Asset}_{task_name}_{name}_{houdini.node}_v{version}.{SEQ}.exr'
     # Additional mantra outputs
     houdini_asset_ifd:
-        definition: '@asset_work_area_houdini/ifds/{task_name}/{houdini.node}/v{version}/{width}x{height}/{Asset}_{task_name}_{name}_{houdini.node}_v{version}.{SEQ}.ifd'
+        definition: '@asset_work_area_houdini/ifds/@generic_asset_version_name/{houdini.node}/v{version}/{Asset}_{task_name}_{name}_{houdini.node}_v{version}.{SEQ}.ifd'
     houdini_asset_dcm:
-        definition: '@asset_work_area_houdini/dcms/{task_name}/{houdini.node}/v{version}/{width}x{height}/{Asset}_{task_name}_{name}_{houdini.node}_v{version}.{SEQ}.dcm'
+        definition: '@asset_work_area_houdini/dcms/@generic_asset_version_name/{houdini.node}/v{version}/{Asset}_{task_name}_{name}_{houdini.node}_v{version}.{SEQ}.dcm'
     houdini_asset_extra_plane:
-        definition: '@asset_render_area_houdini/{task_name}/{houdini.node}/v{version}/{aov_name}/{width}x{height}/{Asset}_{task_name}_{name}_{houdini.node}_{aov_name}_v{version}.{SEQ}.exr'
+        definition: '@asset_render_area_houdini/@generic_asset_version_name/{houdini.node}/v{version}/{aov_name}/{Asset}_{task_name}_{name}_{houdini.node}_{aov_name}_v{version}.{SEQ}.exr'
 
     #
     # Motionbuilder Asset Level
@@ -618,9 +626,9 @@ paths:
 
     # review output
     nuke_asset_render_movie:
-        definition: '@review_root/@nuke_asset_output_name.mov'
+        definition: '07_review/@nuke_asset_output_name.mov'
     asset_quicktime_quick:
-        definition: '@review_root/quickdaily/{Asset}_{task_name}_{nuke.output}_{iteration}.mov'
+        definition: '07_review/quickdaily/{Asset}_{task_name}_{nuke.output}_{iteration}.mov'
 
     #
     # Blender Asset Level
