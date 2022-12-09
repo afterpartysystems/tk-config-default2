@@ -23,48 +23,67 @@ settings.tk-nuke-writenode.asset:
     name: Exr
     proxy_publish_template:
     proxy_render_template:
-    publish_template: nuke_asset_render_pub
-    render_template: nuke_asset_render
+    publish_template: nuke_asset_render_pub_exr
+    render_template: nuke_asset_render_exr
+    settings: {}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: [datatype, compression]
+  - file_type: dpx
+    name: Dpx
+    proxy_publish_template:
+    proxy_render_template:
+    publish_template: nuke_asset_render_pub_dpx
+    render_template: nuke_asset_render_dpx
     settings: {}
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: []
+  - file_type: jpeg
+    name: Jpg
+    proxy_publish_template:
+    proxy_render_template:
+    publish_template: nuke_asset_render_pub_jpg
+    render_template: nuke_asset_render_jpg
+    settings: {}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: [_jpeg_quality, _jpeg_sub_sampling]
   location: "@apps.tk-nuke-writenode.location"
+
 
 # shot
 settings.tk-nuke-writenode.shot:
   template_script_work: nuke_shot_work
   write_nodes:
   - file_type: exr
-    name: Stereo Exr, 32 bit
+    name: Exr
     proxy_publish_template:
     proxy_render_template:
-    publish_template: nuke_shot_render_pub_stereo
-    render_template: nuke_shot_render_stereo
-    settings:
-      datatype: 32 bit float
-    tank_type: Rendered Image
-    tile_color: []
-    promote_write_knobs: []
-  - file_type: exr
-    name: Stereo Exr, 16 bit
-    promote_write_knobs: []
-    proxy_publish_template:
-    proxy_render_template:
-    publish_template: nuke_shot_render_pub_stereo
-    render_template: nuke_shot_render_stereo
-    settings:
-      datatype: 16 bit half
-    tank_type: Rendered Image
-    tile_color: []
-  - file_type: dpx
-    name: Mono Dpx
-    promote_write_knobs: []
-    proxy_publish_template:
-    proxy_render_template:
-    publish_template: nuke_shot_render_pub_mono_dpx
-    render_template: nuke_shot_render_mono_dpx
+    publish_template: nuke_shot_render_pub_exr
+    render_template: nuke_shot_render_exr
     settings: {}
     tank_type: Rendered Image
     tile_color: []
+    promote_write_knobs: [datatype, compression]
+  - file_type: dpx
+    name: Dpx
+    proxy_publish_template:
+    proxy_render_template:
+    publish_template: nuke_shot_render_pub_dpx
+    render_template: nuke_shot_render_dpx
+    settings: {}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: []
+  - file_type: jpeg
+    name: Jpg
+    proxy_publish_template:
+    proxy_render_template:
+    publish_template: nuke_shot_render_pub_jpg
+    render_template: nuke_shot_render_jpg
+    settings: {}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: [_jpeg_quality, _jpeg_sub_sampling]
   location: "@apps.tk-nuke-writenode.location"

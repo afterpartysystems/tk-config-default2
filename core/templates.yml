@@ -373,6 +373,12 @@ paths:
     # The location of renders
     shot_render_area_nuke:
         definition: '@shot_render_root/nuke'
+    # The location of footage
+    shot_footage_area_nuke:
+        definition: '@shot_root/footage'
+    # The location of footage
+    shot_element_area_nuke:
+        definition: '@shot_root/elements'
     #
     # The location of WIP script files
     nuke_shot_work:
@@ -597,6 +603,12 @@ paths:
     # The location of renders
     asset_render_area_nuke:
         definition: '@asset_render_root/nuke'
+    # The location of footage
+    asset_footage_area_nuke:
+        definition: '@asset_root/footage'
+    # The location of footage
+    asset_element_area_nuke:
+        definition: '@asset_root/elements'
     #
     # The location of WIP script files
     nuke_asset_work:
@@ -609,9 +621,9 @@ paths:
         definition: '@asset_publish_area_nuke/@generic_asset_version_name.nk'
 
     # DPX write node output
-    nuke_asset_render_exr:
+    nuke_asset_render_dpx:
         definition: '@asset_render_area_nuke/{task_name}/@nuke_asset_output_name/{width}x{height}/@nuke_asset_output_name.{SEQ}.dpx'
-    nuke_asset_render_pub_exr:
+    nuke_asset_render_pub_dpx:
         definition: '@asset_publish_area_nuke/elements/{task_name}/@nuke_asset_output_name/{width}x{height}/@nuke_asset_output_name.{SEQ}.dpx'
     # EXR write node output
     nuke_asset_render_exr:
@@ -619,9 +631,9 @@ paths:
     nuke_asset_render_pub_exr:
         definition: '@asset_publish_area_nuke/elements/{task_name}/@nuke_asset_output_name/{width}x{height}/@nuke_asset_output_name.{SEQ}.exr'
     # Jpg write node output
-    nuke_asset_render_exr:
+    nuke_asset_render_jpg:
         definition: '@asset_render_area_nuke/{task_name}/@nuke_asset_output_name/{width}x{height}/@nuke_asset_output_name.{SEQ}.jpg'
-    nuke_asset_render_pub_exr:
+    nuke_asset_render_pub_jpg:
         definition: '@asset_publish_area_nuke/elements/{task_name}/@nuke_asset_output_name/{width}x{height}/@nuke_asset_output_name.{SEQ}.jpg'
 
     # review output

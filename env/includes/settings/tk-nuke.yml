@@ -114,6 +114,19 @@ settings.tk-nuke.asset_step:
   - {app_instance: tk-multi-workfiles2, name: File Save...}
   - {app_instance: tk-multi-publish2, name: Publish...}
   location: "@engines.tk-nuke.location"
+  favourite_directories:
+  - display_name: "Asset Root"
+    template_directory: "asset_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Asset Renders"
+    template_directory: "asset_render_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Asset Footage"
+    template_directory: "asset_footage_area_nuke"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Asset Elements"
+    template_directory: "asset_element_area_nuke"
+    icon: "icons/custom_publish_icon.png"
 
 # project
 settings.tk-nuke.project:
@@ -182,6 +195,19 @@ settings.tk-nuke.shot_step:
   - {app_instance: tk-multi-workfiles2, name: File Save...}
   - {app_instance: tk-multi-publish2, name: Publish...}
   location: "@engines.tk-nuke.location"
+  favourite_directories:
+  - display_name: "Shot Root"
+    template_directory: "shot_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Shot Renders"
+    template_directory: "shot_render_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Shot Footage"
+    template_directory: "shot_footage_area_nuke"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Shot Elements"
+    template_directory: "shot_element_area_nuke"
+    icon: "icons/custom_publish_icon.png"
 
 ################################################################################
 # NukeStudio
