@@ -29,7 +29,7 @@ class AppLaunch(sgtk.Hook):
         """
         system = sys.platform
 
-        if system == "linux2":
+        if system == "linux2" or system == "linux":
             # on linux, we launch a gnome terminal in debug mode
             if kwargs.get('show_prompt') or os.getenv('TK_DEBUG'):
                 cmd = 'gnome-terminal -- bash -c "{} {}; exec bash"'.format(app_path, app_args)
