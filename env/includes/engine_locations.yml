@@ -52,8 +52,8 @@ engines.tk-maya.location:
 engines.tk-blender.location:
   type: git
   branch: master
-  path: https://github.com/icentric-dev/tk-blender.git
-  version: v2.0.1
+  path: https://github.com/c1112/tk-blender.git
+  version: v1.1.6
 engines.tk-motionbuilder.location:
   type: app_store
   name: tk-motionbuilder
