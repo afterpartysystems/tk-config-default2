@@ -284,7 +284,7 @@ paths:
 
     # The location of the work area
     shot_work_area_maya:
-        definition: '01_projects/{Sequence}/{Shot}/3d/maya'
+        definition: '@shot_root/3d/maya'
     # The location of published files
     shot_publish_area_maya:
         definition: '@shot_publish_root/maya'
