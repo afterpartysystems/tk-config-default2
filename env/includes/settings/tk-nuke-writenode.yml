@@ -57,7 +57,7 @@ settings.tk-nuke-writenode.shot:
   template_script_work: nuke_shot_work
   write_nodes:
   - file_type: exr
-    name: Exr
+    name: Element EXR
     proxy_publish_template:
     proxy_render_template:
     publish_template: nuke_shot_render_pub_exr
@@ -66,8 +66,28 @@ settings.tk-nuke-writenode.shot:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: [datatype, compression]
+  - file_type: exr
+    name: Task EXR
+    proxy_publish_template:
+    proxy_render_template:
+    publish_template: nuke_shot_render_pub_taskexr
+    render_template: nuke_shot_render_taskexr
+    settings: {}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: [datatype, compression]
+  - file_type: mov
+    name: Element MOV
+    proxy_publish_template:
+    proxy_render_template:
+    publish_template: nuke_shot_render_pub_mov
+    render_template: nuke_shot_render_mov
+    settings: {mov64_format: "mov (QuickTime / MOV)", mov64_codec: appr, mov_h264_codec_profile: "High 4:2:0 8-bit", mov_prores_codec_profile: "ProRes 4:4:4:4 12-bit"}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: [mov64_codec, mov64_fps, mov_prores_codec_profile]
   - file_type: dpx
-    name: Dpx
+    name: Element DPX
     proxy_publish_template:
     proxy_render_template:
     publish_template: nuke_shot_render_pub_dpx
@@ -77,7 +97,7 @@ settings.tk-nuke-writenode.shot:
     tile_color: []
     promote_write_knobs: []
   - file_type: jpeg
-    name: Jpg
+    name: Element JPG
     proxy_publish_template:
     proxy_render_template:
     publish_template: nuke_shot_render_pub_jpg
@@ -86,4 +106,14 @@ settings.tk-nuke-writenode.shot:
     tank_type: Rendered Image
     tile_color: []
     promote_write_knobs: [_jpeg_quality, _jpeg_sub_sampling]
+  - file_type: png
+    name: Element PNG
+    proxy_publish_template:
+    proxy_render_template:
+    publish_template: nuke_shot_render_pub_png
+    render_template: nuke_shot_render_png
+    settings: {}
+    tank_type: Rendered Image
+    tile_color: []
+    promote_write_knobs: [datatype]
   location: "@apps.tk-nuke-writenode.location"

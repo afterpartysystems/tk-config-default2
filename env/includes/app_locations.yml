@@ -129,9 +129,9 @@ apps.tk-nuke-quickreview.location:
   name: tk-nuke-quickreview
   version: v1.3.1
 apps.tk-nuke-writenode.location:
-  name: tk-nuke-writenode
-  type: app_store
-  version: v1.7.1
+  type: git
+  path: https://github.com/afterpartysystems/tk-nuke-writenode.git
+  version: master
 apps.tk-flame-export.location:
   name: tk-flame-export
   type: app_store
