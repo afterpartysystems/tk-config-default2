@@ -400,11 +400,26 @@ paths:
         definition: '@shot_render_area_nuke/{task_name}/@nuke_shot_output_name/{width}x{height}/@nuke_shot_output_name.{SEQ}.exr'
     nuke_shot_render_pub_exr:
         definition: '@shot_publish_area_nuke/elements/{task_name}/@nuke_shot_output_name/{width}x{height}/@nuke_shot_output_name.{SEQ}.exr'
+    # EXR Task write node output
+    nuke_shot_render_taskexr:
+        definition: '@shot_render_area_nuke/{task_name}/{Shot}_{task_name}_v{version}/{width}x{height}/{Shot}_{task_name}_v{version}.{SEQ}.exr'
+    nuke_shot_render_pub_taskexr:
+        definition: '@shot_publish_area_nuke/elements/{task_name}/{Shot}_{task_name}_v{version}/{width}x{height}/{Shot}_{task_name}_v{version}.{SEQ}.exr'
+    # MOV write node output
+    nuke_shot_render_mov:
+        definition: '@shot_render_area_nuke/{task_name}/@nuke_shot_output_name/{width}x{height}/@nuke_shot_output_name.mov'
+    nuke_shot_render_pub_mov:
+        definition: '@shot_publish_area_nuke/elements/{task_name}/@nuke_shot_output_name/{width}x{height}/@nuke_shot_output_name.mov'
     # JPG write node output
     nuke_shot_render_jpg:
         definition: '@shot_render_area_nuke/{task_name}/@nuke_shot_output_name/{width}x{height}/@nuke_shot_output_name.{SEQ}.jpg'
     nuke_shot_render_pub_jpg:
         definition: '@shot_publish_area_nuke/elements/{task_name}/@nuke_shot_output_name/{width}x{height}/@nuke_shot_output_name.{SEQ}.jpg'
+    # PNG write node output
+    nuke_shot_render_png:
+        definition: '@shot_render_area_nuke/{task_name}/@nuke_shot_output_name/{width}x{height}/@nuke_shot_output_name.{SEQ}.png'
+    nuke_shot_render_pub_png:
+        definition: '@shot_publish_area_nuke/elements/{task_name}/@nuke_shot_output_name/{width}x{height}/@nuke_shot_output_name.{SEQ}.png'
 
     # review output
     shot_quicktime_quick:
